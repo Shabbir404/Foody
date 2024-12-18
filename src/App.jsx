@@ -1,17 +1,15 @@
 import { useLoaderData } from 'react-router-dom'
 import './App.css'
+import { Link } from 'react-router-dom';
 
 function App() {
   const { meals } = useLoaderData();
-  const loading = () => {
-    console.log('iam clicked');
 
-  }
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 ">
         {meals.slice(0, 12).map((meal) => (
-          <div key={meal.idMeal} className="card bg-base-100 w-full shadow-xl">
+          <div key={meal.idMeal} className="hover:p-2 duration-300 card bg-base-100 w-full shadow-xl border border-red-400">
             <figure>
               <img
                 src={meal.strMealThumb}
@@ -29,19 +27,24 @@ function App() {
                 {/* Additional actions can be added here */}
               </div>
             </div>
-            <button className="btn btn-error ">Details</button>
+            <Link
+              to={meal.idMeal}
+              className="btn btn-error hover:bg-rose-600"
+            >
+              Details
+            </Link>
           </div>
 
         ))}
       </div>
-      <div>
+      {/* <div>
         <div className="join">
           <button className="join-item btn btn-error" >1</button>
           <button className="join-item btn " onClick={loading()}>2</button>
           <button className="join-item btn ">3</button>
           <button className="join-item btn ">4</button>
         </div>
-      </div>
+      </div> */}
     </div >
   )
 }

@@ -8,6 +8,7 @@ import './index.css'
 import App from './App.jsx'
 import Navbar from './Navbar/Navbar.jsx';
 import About from './About/About.jsx';
+import Details from './Details/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <div> <Navbar></Navbar>, <About></About ></div>
+  },
+  {
+    path: "/:id",
+    element: <div> <Navbar></Navbar>, <Details></Details></div>,
+    loader: ({ params }) =>
+      fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
   }
 ]);
 
