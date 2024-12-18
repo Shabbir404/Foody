@@ -16,9 +16,17 @@ const Navbar = () => {
                     <button className="size-2 mr-4 mt-1.5 font-bold pr-4"><FaSearch /></button>
                     <input className="ml-3 p-1 rounded-md pr-5" type="text" placeholder="search... " />
                 </li>
+
             </ul >
 
+
+            <div className="leading-[3rem]">
+                <hr />
+            </div>
+
         </div >
+
+
     );
 };
 

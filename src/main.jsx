@@ -15,6 +15,10 @@ const router = createBrowserRouter([
     element: <div><Navbar></Navbar>
       <App></App>
     </div>,
+    loader: () => {
+      return fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=a')
+        .then(response => response.json())
+    }
   },
   {
     path: "/about",
