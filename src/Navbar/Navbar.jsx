@@ -1,34 +1,36 @@
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-const Navbar = () => {
+
+function Navbar() {
     return (
-        <div className="w-full justify-items-center text-3xl" >
-            < ul className="
-    text-center flex mt-4 font-medium flex-row space-x-8 lg:mt-0
-     bg-red-400 p-2 rounded-t-lg bold">
-                <li> <Link to='/' className="border-r-2 pr-5 pl-5">Home</Link>
-                </li >
-                <li><Link to='/about'>
-                    About
-                </Link>
-                </li>
-                <li className="flex">
-                    <button className="size-2 mr-4 mt-1.5 font-bold pr-4"><FaSearch /></button>
-                    <input className="ml-3 p-1 rounded-md pr-5" type="text" placeholder="search... " />
-                </li>
+        <nav className="bg-red-500 text-white p-4">
+            <div className="container mx-auto flex justify-between items-center">
+                <ul className="flex space-x-8">
+                    <li>
+                        <Link to="/" className="hover:text-white hover:bg-red-600 px-3 py-2 rounded">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/about" className="hover:text-white hover:bg-red-600 px-3 py-2 rounded">
+                            About
+                        </Link>
+                    </li>
+                </ul>
 
-            </ul >
-
-
-            <div className="leading-[3rem]">
-                <hr />
+                <div className="flex items-center">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        className="border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:border-red-500"
+                    />
+                    <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-r-md">
+                        <FaSearch />
+                    </button>
+                </div>
             </div>
-
-        </div >
-
-
+        </nav>
     );
-};
-
+}
 
 export default Navbar;

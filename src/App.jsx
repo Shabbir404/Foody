@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 ">
-        {meals.slice(0, 12).map((meal) => (
+        {meals.slice(0, 24).map((meal) => (
           <div key={meal.idMeal} className="hover:p-2 duration-300 card bg-base-100 w-full shadow-xl border border-red-400">
             <figure>
               <img
